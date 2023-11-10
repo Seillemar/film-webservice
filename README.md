@@ -13,11 +13,11 @@ Lucas Koellsch, Valentin Hustache
 
         Clonez le dépôt.
 
-        git clone 
+        git clone https://github.com/Seillemar/film-webservice
 
         Naviguez vers le répertoire du projet.
 
-        cd nom-du-projet
+        cd film-webservice
 
         Construisez l'image Docker.
 
