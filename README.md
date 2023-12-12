@@ -47,6 +47,13 @@ Lucas Koellsch, Valentin Hustache
         PUT /api/v1/films/:id: Mettre à jour un film par son ID.
         DELETE /api/v1/films/:id: Supprimer un film par son ID.
 
+        GET /api/v1/films/:id/categories: Récupérer les catégories d'un film
+        GET /api/v1/categories/:id/films: Récupérer les films d'une catégorie
+
+        PUT /api/v1/categories/:id : Met à jour une catégorie existante
+        DELETE /api/v1/categories/:id : Supprime une catégorie existante
+        GET /api/v1/categories/:id/films : Récupère tous les films d'une catégorie spécifique
+
     Exemples de Requêtes HTTP
 
         Vous pouvez utiliser des outils comme curl ou Postman pour tester les endpoints de l'API. Voici quelques exemples de requêtes HTTP avec curl :

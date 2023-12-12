@@ -1,11 +1,25 @@
 'use strict'
 
 const Film = use('App/Models/Film')
+const Database = use('Database')
 
 class FilmController {
-  async index({ response }) {
-    const films = await Film.all()
-    return response.status(200).json(films)
+
+  async index({ request }) {
+    const { nom, description, page } = request.get()
+    const query = Database.from('films')
+    if (nom) {
+      query.where('nom', 'like', `%${nom}%`)
+    }
+    if (description) {
+      query.where('description', 'like', `%${description}%`)
+    }
+    return await query.paginate(page, 10)
+  }
+
+  async categories({ params }) {
+    const film = await Film.find(params.id)
+    return await film.categories().fetch()
   }
 
   async store({ request, response }) {

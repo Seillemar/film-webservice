@@ -13,6 +13,8 @@
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
 const Film = use('App/Models/Film')
+const Category = use('App/Models/Category')
+
 class FilmSeeder {
   async run () {
     const films = [
@@ -78,7 +80,24 @@ class FilmSeeder {
       }
     ];
 
-    await Film.createMany(films);
+    const categories = [
+      { nom: 'Thriller' },
+      { nom: 'Drame' },
+      { nom: 'Crime' },
+      { nom: 'Comédie' },
+      { nom: 'Science-fiction' },
+      { nom: 'Romance' }
+    ];
+
+      // Créer les films
+      const createdFilms = await Film.createMany(films)
+
+      // Créer les catégories
+      const createdCategories = await Category.createMany(categories)
+
+      for (let film of createdFilms) {
+        await film.categories().attach([createdCategories[0].id])
+      }
   }
 }
 
