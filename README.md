@@ -35,7 +35,7 @@ Lucas Koellsch, Valentin Hustache
 
     Exécutez le seeder pour peupler la base de données avec des données de test.
 
-        docker-compose run web adonis seed --files FilmSeeder.js
+        docker-compose run web adonis seed
 
         Cela créera quelques films fictifs dans la base de données.
 
