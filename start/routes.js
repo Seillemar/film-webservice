@@ -20,8 +20,10 @@ Route.on('/').render('welcome')
 
 Route.group(() => {
     Route.resource('films', 'FilmController').apiOnly()
-    Route.get('films/:id/categories', 'FilmController.categories')
-    Route.get('categories/:id/films', 'CategoryController.films')
+  }).prefix('api/v1')
+
+Route.group(() => {
+    Route.resource('categories', 'CategoryController').apiOnly()
   }).prefix('api/v1')
 
   

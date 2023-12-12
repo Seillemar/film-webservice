@@ -50,9 +50,13 @@ Lucas Koellsch, Valentin Hustache
         GET /api/v1/films/:id/categories: Récupérer les catégories d'un film
         GET /api/v1/categories/:id/films: Récupérer les films d'une catégorie
 
-        PUT /api/v1/categories/:id : Met à jour une catégorie existante
-        DELETE /api/v1/categories/:id : Supprime une catégorie existante
-        GET /api/v1/categories/:id/films : Récupère tous les films d'une catégorie spécifique
+        PUT /api/v1/categories/:id: Met à jour une catégorie existante
+        DELETE /api/v1/categories/:id: Supprime une catégorie existante
+        GET /api/v1/categories/:id/films: Récupère tous les films d'une catégorie spécifique
+        POST /api/v1/catégories?nom={nom de la catégorie}: Créer une nouvelle catégorie.
+
+        GET /api/v1/films?nom=inception: Recherche par nom de film
+        GET /api/v1/films?description=science: Recherche par description
 
     Exemples de Requêtes HTTP
 
